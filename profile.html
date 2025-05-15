@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="VC.jpg" type="image/jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Basic styles for Font Awesome icons */
+      .fa,
+      .fab,
+      .fad,
+      .fal,
+      .far,
+      .fas {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+      }
+    </style>
+    <script>
+      function validateForm(event) {
+        const age = document.getElementById("age").value;
+        const height = document.getElementById("height").value;
+        const weight = document.getElementById("weight").value;
+        const gender = document.getElementById("gender").value;
+        const bloodGroup = document.getElementById("blood-group").value;
+        const bloodPressure = document.getElementById("bloodPressure").value;
+        const bloodSugar = document.getElementById("bloodSugar").value;
+        const pulseRate = document.getElementById("pulseRate").value;
+
+        // Check if any of the fields are empty
+        if (
+          !age ||
+          !height ||
+          !weight ||
+          gender === "" ||
+          bloodGroup === "" ||
+          !bloodPressure ||
+          !bloodSugar ||
+          !pulseRate
+        ) {
+          event.preventDefault(); // Prevent form submission
+          alert("Please fill in all fields."); // Alert message
+        } else {
+          // Store data in localStorage
+          localStorage.setItem("age", age);
+          localStorage.setItem("height", height);
+          localStorage.setItem("weight", weight);
+          localStorage.setItem("gender", gender);
+          localStorage.setItem("bloodGroup", bloodGroup);
+          localStorage.setItem("bloodPressure", bloodPressure); // Store blood pressure
+          localStorage.setItem("bloodSugar", bloodSugar); // Store blood sugar
+          localStorage.setItem("pulseRate", pulseRate); // Store pulse rate
+
+          // Calculate BMI
+          const heightInMeters = height / 100; // Convert height to meters
+          const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2); // Calculate BMI
+          localStorage.setItem("bmi", bmi); // Store BMI
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Building Profile Page -->
+    <div class="min-h-screen flex items-center justify-center bg-blue-200">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center text-blue-600">
+          Build Your Profile
+        </h2>
+        <form
+          id="profile"
+          action="disease.html"
+          method="GET"
+          onsubmit="validateForm(event)"
+        >
+          <div class="mb-4">
+            <label class="block text-gray-700" for="age">Age</label>
+            <input
+              id="age"
+              class="w-full px-3 py-2 border rounded-lg"
+              placeholder="Enter your age"
+              type="number"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="gender">Gender</label>
+            <select
+              id="gender"
+              class="w-full px-3 py-2 border rounded-lg"
+              required
+            >
+              <option value="" disabled selected>Select your gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="height">Height (cm)</label>
+            <input
+              id="height"
+              class="w-full px-3 py-2 border rounded-lg"
+              placeholder="Enter your height"
+              type="number"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="weight">Weight (kg)</label>
+            <input
+              id="weight"
+              class="w-full px-3 py-2 border rounded-lg"
+              placeholder="Enter your weight"
+              type="number"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="blood-group"
+              >Blood Group</label
+            >
+            <select
+              id="blood-group"
+              class="w-full px-3 py-2 border rounded-lg"
+              required
+            >
+              <option value="" disabled selected>
+                Select your blood group
+              </option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="bloodPressure"
+              >Blood Pressure</label
+            >
+            <input
+              id="bloodPressure"
+              class="w-full px-3 py-2 border rounded-lg"
+              placeholder="Enter your blood pressure"
+              type="text"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="bloodSugar"
+              >Blood Sugar</label
+            >
+            <input
+              id="bloodSugar"
+              class="w-full px-3 py-2 border rounded-lg"
+              placeholder="Enter your blood sugar"
+              type="text"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700" for="pulseRate"
+              >Pulse Rate</label
+            >
+            <input
+              id="pulseRate"
+              class="w-full px-3 py-2 border rounded-lg"
+              placeholder="Enter your pulse rate"
+              type="text"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

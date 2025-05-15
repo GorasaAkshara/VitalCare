@@ -1,0 +1,195 @@
+<html lang="en">
+  <head>
+    <link rel="icon" href="VC.jpg" type="image/jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>doctorprofile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Basic styles for Font Awesome icons */
+      .fa,
+      .fab,
+      .fad,
+      .fal,
+      .far,
+      .fas {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+      }
+
+      /* Icon size classes */
+      .fa-lg {
+        font-size: 1.33333em;
+        line-height: 0.75em;
+        vertical-align: -0.0667em;
+      }
+      .fa-xs {
+        font-size: 0.75em;
+      }
+      .fa-sm {
+        font-size: 0.875em;
+      }
+      .fa-1x {
+        font-size: 1em;
+      }
+      .fa-2x {
+        font-size: 2em;
+      }
+      .fa-3x {
+        font-size: 3em;
+      }
+      .fa-4x {
+        font-size: 4em;
+      }
+      .fa-5x {
+        font-size: 5em;
+      }
+      .fa-6x {
+        font-size: 6em;
+      }
+      .fa-7x {
+        font-size: 7em;
+      }
+      .fa-8x {
+        font-size: 8em;
+      }
+      .fa-9x {
+        font-size: 9em;
+      }
+      .fa-10x {
+        font-size: 10em;
+      }
+
+      /* List styles */
+      .fa-ul {
+        list-style-type: none;
+        margin-left: 2.5em;
+        padding-left: 0;
+      }
+      .fa-ul > li {
+        position: relative;
+      }
+      .fa-li {
+        left: -2em;
+        position: absolute;
+        text-align: center;
+        width: 2em;
+        line-height: inherit;
+      }
+
+      /* Border and float styles */
+      .fa-border {
+        border: 0.08em solid #eee;
+        border-radius: 0.1em;
+        padding: 0.2em 0.25em 0.15em;
+      }
+      .fa-pull-left {
+        float: left;
+      }
+      .fa-pull-right {
+        float: right;
+      }
+
+      /* Animation styles */
+      .fa-spin {
+        animation: fa-spin 2s linear infinite;
+      }
+      @keyframes fa-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
+      /* Stack styles */
+      .fa-stack {
+        display: inline-block;
+        height: 2em;
+        line-height: 2em;
+        position: relative;
+        vertical-align: middle;
+        width: 2.5em;
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2")
+          format("woff2");
+        unicode-range: U+0000-00FF; /* Basic Latin */
+      }
+
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2")
+          format("woff2");
+        unicode-range: U+0000-00FF; /* Basic Latin */
+      }
+
+      /* Additional unicode ranges for different character sets can be added similarly */
+    </style>
+  </head>
+  <!-- Detailed Doctor Profile -->
+  <header class="flex justify-between items-center py-4">
+    <h1 class="text-3xl font-bold text-blue-700">Detailed Doctor Profile</h1>
+    <nav style="margin-right: 50px">
+      <ul class="flex space-x-4">
+        <li>
+          <a class="text-blue-700 hover:text-blue-900" href="homepage.html"
+            >Home</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="bg-white p-8 rounded-lg shadow-lg">
+    <div class="flex items-center mb-4">
+      <img
+        alt="Detailed doctor profile picture placeholder"
+        class="w-24 h-24 rounded-full mr-4"
+        height="100"
+        src="doctor-symbol-png-favpng-nnPkCYtDQXJmbGvZ9gFGCXVyL.jpg"
+        width="100"
+      />
+      <div>
+        <h3 class="text-2xl font-bold text-blue-600">Dr. Emily Johnson</h3>
+        <p class="text-gray-700">Neurologist</p>
+      </div>
+    </div>
+    <p class="text-gray-700 mb-4">
+      Dr. Emily Johnson is an experienced neurologist specializing in heart
+      health, with a strong background in diagnosing and treating cardiovascular
+      conditions. With years of expertise, she is dedicated to providing
+      comprehensive care for her patients' heart-related needs.
+    </p>
+    <div class="mb-4">
+      <h4 class="text-xl font-bold text-blue-600">Contact Information</h4>
+      <p class="text-gray-700">Email: emily.jhonson@example.com</p>
+      <p class="text-gray-700">Phone: (123) 456-7890</p>
+    </div>
+    <div class="flex justify-between items-center">
+      <a href="Confirm3.html"
+        ><button class="bg-blue-600 text-white py-2 px-4 rounded-lg">
+          Book an Appointment
+        </button>
+      </a>
+      <a href="chat3.html">
+        <button
+          class="bg-green-600 text-white py-2 px-4 rounded-lg flex items-center"
+        >
+          <i class="fas fa-comments mr-2"> </i>
+          Chat
+        </button>
+      </a>
+    </div>
+  </div>
+</html>

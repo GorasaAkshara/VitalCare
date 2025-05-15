@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="VC.jpg" type="image/jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat with Dr. Sarah Williams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-8">
+    <header class="flex justify-between items-center py-4">
+      <h1 class="text-3xl font-bold text-blue-700">
+        Chat with Dr. Sarah Williams
+      </h1>
+      <nav style="margin-right: 50px">
+        <ul class="flex space-x-4">
+          <li>
+            <a class="text-blue-700 hover:text-blue-900" href="homepage.html"
+              >Home</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+      <div class="mb-4">
+        <h4 class="text-xl font-bold text-blue-600">Chat Interface</h4>
+        <!-- Chat window will go here -->
+        <div class="border p-4 rounded-lg h-60 overflow-y-scroll bg-gray-50">
+          <p>
+            Welcome to the chat with Dr. Sarah Williams. How can I assist you?
+          </p>
+        </div>
+      </div>
+      <!-- Chat input field -->
+      <textarea
+        class="w-full p-2 border border-gray-300 rounded-lg"
+        placeholder="Type your message..."
+        rows="4"
+      ></textarea>
+      <button class="bg-blue-600 text-white py-2 px-4 rounded-lg mt-2">
+        Send
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,467 @@
+<html>
+ <head>
+    <link rel="icon" href="VC.jpg" type="image/jpg">
+
+  <title>
+  homepage
+  </title>
+  <script src="https://cdn.tailwindcss.com"> 
+  </script>
+<Style>
+  /* Basic styles for Font Awesome icons */
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+/* Icon size classes */
+.fa-lg { font-size: 1.33333em; line-height: .75em; vertical-align: -.0667em; }
+.fa-xs { font-size: .75em; }
+.fa-sm { font-size: .875em; }
+.fa-1x { font-size: 1em; }
+.fa-2x { font-size: 2em; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+.fa-6x { font-size: 6em; }
+.fa-7x { font-size: 7em; }
+.fa-8x { font-size: 8em; }
+.fa-9x { font-size: 9em; }
+.fa-10x { font-size: 10em; }
+
+/* List styles */
+.fa-ul {
+    list-style-type: none;
+    margin-left: 2.5em;
+    padding-left: 0;
+}
+.fa-ul > li {
+    position: relative;
+}
+.fa-li {
+    left: -2em;
+    position: absolute;
+    text-align: center;
+    width: 2em;
+    line-height: inherit;
+}
+
+/* Border and float styles */
+.fa-border {
+    border: .08em solid #eee;
+    border-radius: .1em;
+    padding: .2em .25em .15em;
+}
+.fa-pull-left {
+    float: left;
+}
+.fa-pull-right {
+    float: right;
+}
+
+/* Animation styles */
+.fa-spin {
+    animation: fa-spin 2s linear infinite;
+}
+@keyframes fa-spin {
+    0% { transform: rotate(0deg); }
+    to { transform: rotate(1turn); }
+}
+
+/* Stack styles */
+.fa-stack {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    vertical-align: middle;
+    width: 2.5em;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2') format('woff2');
+    unicode-range: U+0000-00FF; /* Basic Latin */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2') format('woff2');
+    unicode-range: U+0000-00FF; /* Basic Latin */
+}
+
+/* Additional unicode ranges for different character sets can be added similarly */
+
+</Style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+   </head>
+    <body>
+    <!-- Home Page -->
+<div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white flex justify-between items-center">
+     <div class="text-lg font-bold">
+      Vital Care
+     </div>
+     <div class="flex items-center">
+      <a class="px-4" href="homepage.html">
+       Home
+      </a>
+      <a class="px-4" href="patient records.html">
+       Records
+      </a>
+      <a 
+      class="px-4" href="patientcommunity.html">
+       Patient Community
+      </a>
+      <a class="px-4" href="remainders.html">
+       Reminders
+      </a>
+      <img alt="Profile picture placeholder" class="w-10 h-10 rounded-full ml-4" height="100" src="Profile-PNG-Free-Download.png" width="100"/>
+     </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="flex-grow p-8">
+     <h1 class="text-3xl font-bold text-blue-600 mb-6">
+      Welcome to Vital Care
+     </h1>
+     <p class="text-gray-700 mb-4">
+     <strong> Your health is our priority. Use the navigation above to access different features of the app.</strong>
+     </p>
+    <!-- Health Metrics Tab -->
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">
+        Health Metrics
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-blue-600 mb-2">
+                Blood Pressure
+            </h3>
+            <p class="text-gray-700" id="display-blood-pressure">
+                Systolic: <span id="systolic-pressure">120</span> mmHg
+            </p>
+            <p class="text-gray-700" id="display-diastolic-pressure">
+                Diastolic: <span id="diastolic-pressure">80</span> mmHg
+            </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-blue-600 mb-2">
+                Heart Rate
+            </h3>
+            <p class="text-gray-700" id="display-heart-rate">
+                <span id="heart-rate">72</span> bpm
+            </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-blue-600 mb-2">
+                Blood Sugar
+            </h3>
+            <p class="text-gray-700" id="display-blood-sugar">
+                <span id="blood-sugar">90</span> mg/dL
+            </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-blue-600 mb-2">
+                BMI
+            </h3>
+            <p class="text-gray-700">
+                22.5
+            </p>
+        </div>
+    </div>
+     <!-- Patient Personal Data Analysis -->
+   <h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">
+    Patient Personal Data Analysis
+    </h2>
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div class="flex items-center mb-4">
+            <img alt="Profile picture of the patient" class="w-24 h-24 rounded-full mr-4" height="100" src="Profile-PNG-Free-Download.png" width="100"/>
+            <div>
+                <h3 class="text-xl font-bold text-blue-600" id="patient-name">
+                    John Doe
+                </h3>
+                <p class="text-gray-700" id="patient-age">
+                    Age: 45
+                </p>
+                <p class="text-gray-700" id="patient-gender">
+                    Gender: Male
+                </p>
+                <p class="text-gray-700" id="patient-height">
+                    Height: 180 cm
+                </p>
+                <p class="text-gray-700" id="patient-weight">
+                    Weight: 75 kg
+                </p>
+                <p class="text-gray-700" id="patient-blood-group">
+                    Blood Group: O+
+                </p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <h4 class="text-lg font-bold text-blue-600 mb-2">
+                    Enter your Recent Activities
+                </h4>
+                <div class="mt-4">
+                    <input id="user-input" class="w-full p-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Type your recent activities..." type="text"/>
+                    <button id="add-button" class="mt-2 p-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 w-full">
+                        ADD
+                    </button>
+                </div>
+                <div class="mt-4">
+                    <h5 class="text-lg font-bold text-blue-600 mb-2">Added Activities:</h5>
+                    <ul id="activities-list" class="list-disc list-inside text-gray-700">
+                        <!-- Added activities will appear here -->
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold text-blue-600 mb-2">
+                    Health Recommendations
+                </h4>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Maintain a balanced diet</li>
+                    <li>Exercise regularly</li>
+                    <li>Monitor blood pressure daily</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve data from localStorage
+            const name = localStorage.getItem('name'); // Retrieve the name
+            const age = localStorage.getItem('age');
+            const height = localStorage.getItem('height');
+            const weight = localStorage.getItem('weight');
+            const gender = localStorage.getItem('gender');
+            const bloodGroup = localStorage.getItem('bloodGroup');
+            const bloodPressure = localStorage.getItem('bloodPressure');
+            const bloodSugar = localStorage.getItem('bloodSugar');
+            const pulseRate = localStorage.getItem('pulseRate');
+
+            // Check if data exists
+            if (name) {
+                document.getElementById('patient-name').innerText = name; // Use the retrieved name
+            }
+            if (age && height && weight && gender && bloodGroup) {
+                document.getElementById('patient-age').innerText = `Age: ${age}`;
+                document.getElementById('patient-gender').innerText = `Gender: ${gender}`;
+                document.getElementById('patient-height').innerText = `Height: ${height} cm`;
+                document.getElementById('patient-weight').innerText = `Weight: ${weight} kg`;
+                document.getElementById('patient-blood-group').innerText = `Blood Group: ${bloodGroup}`;
+            }
+            if (bloodPressure) {
+                const pressures = bloodPressure.split('/');
+                document.getElementById('systolic-pressure').innerText = pressures[0];
+                document.getElementById('diastolic-pressure').innerText = pressures[1];
+            }
+            if (bloodSugar) {
+                document.getElementById('blood-sugar').innerText = bloodSugar;
+            }
+            if (pulseRate) {
+                document.getElementById('heart-rate').innerText = pulseRate;
+            }
+
+         // Function to check health metrics and show alerts
+         function checkHealthMetrics() {
+                    const bloodSugar = parseInt(localStorage.getItem('bloodSugar')) || 0;
+                    const systolicPressure = parseInt(localStorage.getItem('bloodPressure').split('/')[0]) || 0;
+                    const diastolicPressure = parseInt(localStorage.getItem('bloodPressure').split('/')[1]) || 0;
+                    const heartRate = parseInt(localStorage.getItem('pulseRate')) || 0;
+
+                    let alertMessage = '';
+
+                    // Check for diabetes risk
+                    if (bloodSugar > 130) {
+                        alertMessage += '⚠️your sugar’s high and you’re feeling shy, don’t just let it slide—give the doc a try!⚠️ \n';
+                       
+                    }
+
+                    // Check for heart stroke risk
+                    if (systolicPressure > 140 || diastolicPressure > 90) {
+                        alertMessage += '⚠️If your heart’s doing flips, don’t take any trips—see a doctor, don’t let it slip!⚠️ \n';
+                    }
+
+                    // Check for cardiac arrest risk
+                    if (heartRate < 60 || heartRate > 100) {
+                        alertMessage += '⚠️ ⚠️ Emergency Alert: If your heart’s feeling funky, don’t be a monkey—call a doc, it’s not just junky!⚠️. \n';
+                    }
+
+                    // Show alert if there are any messages
+                    if (alertMessage) {
+                        alert(alertMessage);
+                    }
+                }
+
+                // Call the function to check health metrics
+                checkHealthMetrics();
+            });
+    </script>
+     <!-- Doctors Profiles -->
+<h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">
+    Doctors Profiles
+</h2>
+<div id="doctors-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Doctor profiles will be dynamically inserted here -->
+</div>
+
+<script>
+    // Backend data for doctor profiles
+    const doctorsData = [
+        {
+            name: "Dr. Sarah Williams",
+            specialty: "Cardiologist",
+            image: "doctor-symbol-png-favpng-nnPkCYtDQXJmbGvZ9gFGCXVyL.jpg",
+            profileLink: "doctorprofile.html"
+        },
+        {
+            name: "Dr. Jane Smith",
+            specialty: "Endocrinologist",
+            image: "doctor-symbol-png-favpng-nnPkCYtDQXJmbGvZ9gFGCXVyL.jpg",
+            profileLink: "doctorprofile2.html"
+        },
+        {
+            name: "Dr. Emily Johnson",
+            specialty: "Neurologist",
+            image: "doctor-symbol-png-favpng-nnPkCYtDQXJmbGvZ9gFGCXVyL.jpg",
+            profileLink: "doctorprofile3.html"
+        },
+        {
+            name: "Dr. Michael Brown",
+            specialty: "Vascular Surgeon",
+            image: "doctor-symbol-png-favpng-nnPkCYtDQXJmbGvZ9gFGCXVyL.jpg",
+            profileLink: "doctorprofile4.html"
+        }
+    ];
+
+    // Function to render doctor profiles dynamically
+    function renderDoctorsProfiles() {
+        const doctorsContainer = document.getElementById('doctors-container');
+
+        doctorsData.forEach(doctor => {
+            const doctorDiv = document.createElement('div');
+            doctorDiv.className = "bg-white p-4 rounded-lg shadow-lg flex items-center";
+
+            doctorDiv.innerHTML = `
+                <a href="${doctor.profileLink}">
+                    <img 
+                        alt="Doctor profile picture placeholder" 
+                        class="w-16 h-16 rounded-full mr-4" 
+                        src="${doctor.image}" 
+                        width="100" 
+                        height="100" 
+                    />
+                </a>
+                <div>
+                    <h3 class="text-xl font-bold text-blue-600">${doctor.name}</h3>
+                    <p class="text-gray-700">${doctor.specialty}</p>
+                </div>
+            `;
+            doctorsContainer.appendChild(doctorDiv);
+        });
+    }
+
+    // Call the function to render the profiles
+    renderDoctorsProfiles();
+</script>
+       <!-- Footer -->
+    <footer class="bg-blue-600 p-4 mt-8">
+      <div class="container mx-auto text-center text-white">
+       <p>
+        © 2024 Vital Care. All rights reserved.
+       </p>
+      </div>
+     </footer>
+    <!-- Code injected by live-server -->
+  <script>
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+          (function () {
+              function refreshCSS() {
+                  var sheets = [].slice.call(document.getElementsByTagName("link"));
+                  var head = document.getElementsByTagName("head")[0];
+                  for (var i = 0; i < sheets.length; ++i) {
+                      var elem = sheets[i];
+                      var parent = elem.parentElement || head;
+                      parent.removeChild(elem);
+                      var rel = elem.rel;
+                      if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                      }
+                      parent.appendChild(elem);
+                  }
+              }
+              var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+              var address = protocol + window.location.host + window.location.pathname + '/ws';
+              var socket = new WebSocket(address);
+              socket.onmessage = function (msg) {
+                  if (msg.data == 'reload') window.location.reload();
+                  else if (msg.data == 'refreshcss') refreshCSS();
+              };
+              if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                  console.log('Live reload enabled.');
+                  sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+              }
+          })();
+      }
+      else {
+          console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+      // ]]>
+
+      
+  </script>
+  <script>
+
+    document.getElementById('add-button').addEventListener('click', function () {
+        const userInput = document.getElementById('user-input');
+        const activitiesList = document.getElementById('activities-list');
+
+        // Get the value entered by the user
+        const activity = userInput.value.trim();
+
+        if (activity) {
+            // Create a new list item
+            const listItem = document.createElement('li');
+            listItem.textContent = activity;
+
+            // Append the new activity to the list
+            activitiesList.appendChild(listItem);
+
+            // Clear the input field
+            userInput.value = '';
+        } else {
+            alert('Please enter a valid activity.');
+        }
+    });
+
+    
+</script>
+  </body>
+   </html>
+   <!DOCTYPE html>
+   <html>
+   <head>
+     <title>VC BOT</title>
+   </head>
+   <body>
+     
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2024/12/29/06/20241229061914-4M2VKHVF.js"></script>
+        
+         
+   </body>
+   </html>

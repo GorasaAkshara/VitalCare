@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="VC.jpg" type="image/jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-8">
+    <header class="flex justify-between items-center py-4">
+      <h1 class="text-3xl font-bold text-blue-700">
+        Book Appointment with Dr. Jane Smith
+      </h1>
+      <nav style="margin-right: 50px">
+        <ul class="flex space-x-4">
+          <li>
+            <a class="text-blue-700 hover:text-blue-900" href="homepage.html"
+              >Home</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+      <form id="appointment-form" class="space-y-4">
+        <div>
+          <label for="date" class="block text-gray-700 font-bold mb-2"
+            >Select Date</label
+          >
+          <input
+            type="date"
+            id="date"
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            required
+          />
+        </div>
+        <div>
+          <label for="time-slot" class="block text-gray-700 font-bold mb-2"
+            >Select Time Slot</label
+          >
+          <select
+            id="time-slot"
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            required
+          >
+            <option value="" disabled selected>Select a time slot</option>
+            <option value="9:00 AM - 9:30 AM">9:00 AM - 9:30 AM</option>
+            <option value="10:00 AM - 10:30 AM">10:00 AM - 10:30 AM</option>
+            <option value="11:00 AM - 11:30 AM">11:00 AM - 11:30 AM</option>
+            <option value="2:00 PM - 2:30 PM">2:00 PM - 2:30 PM</option>
+            <option value="3:00 PM - 3:30 PM">3:00 PM - 3:30 PM</option>
+          </select>
+        </div>
+        <div>
+          <label for="reason" class="block text-gray-700 font-bold mb-2"
+            >Reason for Appointment</label
+          >
+          <textarea
+            id="reason"
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            placeholder="Describe the reason for your visit"
+            required
+          ></textarea>
+        </div>
+        <div>
+          <label for="number" class="block text-gray-700 font-bold mb-2"
+            >Phone Number</label
+          >
+          <input
+            id="number"
+            class="w-full p-2 border rounded-lg"
+            placeholder="Enter your number"
+            type="tel"
+            required
+          />
+        </div>
+        <div>
+          <label for="request" class="block text-gray-700 font-bold mb-2"
+            >Any Special Requests</label
+          >
+          <textarea
+            id="request"
+            class="w-full p-2 border border-gray-300 rounded-lg"
+            placeholder="Describe any special requests for your visit"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+        >
+          Confirm Appointment
+        </button>
+      </form>
+      <div
+        id="confirmation-message"
+        class="mt-4 hidden text-green-600 font-bold"
+      >
+        Appointment confirmed! Thank you.
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("appointment-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent the form from submitting normally
+
+          // Collect form data
+          const appointment = {
+            doctor: "Dr. Jane Smith",
+            date: document.getElementById("date").value,
+            timeSlot: document.getElementById("time-slot").value,
+            reason: document.getElementById("reason").value,
+            phoneNumber: document.getElementById("number").value,
+            specialRequest: document.getElementById("request").value,
+          };
+
+          // Save appointment data to localStorage
+          localStorage.setItem("appointment", JSON.stringify(appointment));
+
+          // Display confirmation message
+          const confirmationMessage = document.getElementById(
+            "confirmation-message"
+          );
+          confirmationMessage.classList.remove("hidden");
+        });
+    </script>
+  </body>
+</html>

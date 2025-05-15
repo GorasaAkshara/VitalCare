@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="VC.jpg" type="image/jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Records</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function validateForm(event) {
+        const fileInput = document.getElementById("file-input");
+        const file = fileInput.files[0];
+
+        // Check if a file is selected
+        if (!file) {
+          event.preventDefault(); // Prevent form submission
+          alert("Please upload an image file."); // Alert message
+          return;
+        }
+
+        // Check if the file is an image
+        if (!file.type.startsWith("image/")) {
+          event.preventDefault(); // Prevent form submission
+          alert("Please upload a valid image file."); // Alert message
+          return;
+        }
+
+        // Store the file name and data in local storage
+        const uploadedFiles =
+          JSON.parse(localStorage.getItem("uploadedFiles")) || [];
+        const reader = new FileReader();
+        reader.onload = function () {
+          const fileData = {
+            name: file.name,
+            data: reader.result, // Base64 encoded string
+          };
+          uploadedFiles.push(fileData);
+          localStorage.setItem("uploadedFiles", JSON.stringify(uploadedFiles));
+        };
+        reader.readAsDataURL(file);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="min-h-screen flex items-center justify-center bg-blue-200">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center text-blue-600">
+          Records Input
+        </h2>
+        <form
+          id="records"
+          action="medicationremainder.html"
+          method="GET"
+          onsubmit="validateForm(event)"
+        >
+          <div class="mb-4">
+            <label class="block text-gray-700" for="file-input"
+              >Upload Image</label
+            >
+            <input
+              id="file-input"
+              accept="image/*"
+              class="w-full px-3 py-2 border rounded-lg"
+              type="file"
+              required
+            />
+          </div>
+          <button
+            class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

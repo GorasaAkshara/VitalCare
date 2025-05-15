@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="VC.jpg" type="image/jpg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disease Input</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Basic styles for Font Awesome icons */
+      .fa,
+      .fab,
+      .fad,
+      .fal,
+      .far,
+      .fas {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+      }
+
+      /* Icon size classes */
+      .fa-lg {
+        font-size: 1.33333em;
+        line-height: 0.75em;
+        vertical-align: -0.0667em;
+      }
+      .fa-xs {
+        font-size: 0.75em;
+      }
+      .fa-sm {
+        font-size: 0.875em;
+      }
+      .fa-1x {
+        font-size: 1em;
+      }
+      .fa-2x {
+        font-size: 2em;
+      }
+      .fa-3x {
+        font-size: 3em;
+      }
+      .fa-4x {
+        font-size: 4em;
+      }
+      .fa-5x {
+        font-size: 5em;
+      }
+      .fa-6x {
+        font-size: 6em;
+      }
+      .fa-7x {
+        font-size: 7em;
+      }
+      .fa-8x {
+        font-size: 8em;
+      }
+      .fa-9x {
+        font-size: 9em;
+      }
+      .fa-10x {
+        font-size: 10em;
+      }
+
+      /* List styles */
+      .fa-ul {
+        list-style-type: none;
+        margin-left: 2.5em;
+        padding-left: 0;
+      }
+      .fa-ul > li {
+        position: relative;
+      }
+      .fa-li {
+        left: -2em;
+        position: absolute;
+        text-align: center;
+        width: 2em;
+        line-height: inherit;
+      }
+
+      /* Border and float styles */
+      .fa-border {
+        border: 0.08em solid #eee;
+        border-radius: 0.1em;
+        padding: 0.2em 0.25em 0.15em;
+      }
+      .fa-pull-left {
+        float: left;
+      }
+      .fa-pull-right {
+        float: right;
+      }
+
+      /* Animation styles */
+      .fa-spin {
+        animation: fa-spin 2s linear infinite;
+      }
+      @keyframes fa-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
+      /* Stack styles */
+      .fa-stack {
+        display: inline-block;
+        height: 2em;
+        line-height: 2em;
+        position: relative;
+        vertical-align: middle;
+        width: 2.5em;
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2")
+          format("woff2");
+        unicode-range: U+0000-00FF; /* Basic Latin */
+      }
+
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2")
+          format("woff2");
+        unicode-range: U+0000-00FF; /* Basic Latin */
+      }
+
+      /* Additional unicode ranges for different character sets can be added similarly */
+    </style>
+    <script>
+      function validateForm(event) {
+        const checkboxes = document.querySelectorAll(
+          'input[name="diseases"]:checked'
+        );
+        if (checkboxes.length === 0) {
+          event.preventDefault(); // Prevent form submission
+          alert("Please select at least one disease."); // Alert message
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Disease Input Page -->
+    <div class="min-h-screen flex items-center justify-center bg-blue-200">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-center text-blue-600">
+          Disease Input
+        </h2>
+        <form
+          id="disease"
+          action="record-1.html"
+          method="GET"
+          onsubmit="validateForm(event)"
+        >
+          <fieldset class="mb-4">
+            <legend class="block text-gray-700 font-semibold mb-2">
+              Select Diseases
+            </legend>
+            <div class="flex items-center mb-2">
+              <input
+                id="diabetes"
+                class="mr-2"
+                type="checkbox"
+                name="diseases"
+                value="Diabetes"
+                aria-label="Diabetes"
+              />
+              <label for="diabetes" class="text-gray-700">Diabetes</label>
+            </div>
+            <div class="flex items-center mb-2">
+              <input
+                id="heart-attack"
+                class="mr-2"
+                type="checkbox"
+                name="diseases"
+                value="Heart Attack"
+                aria-label="Heart Attack"
+              />
+              <label for="heart-attack" class="text-gray-700"
+                >Heart Stroke</label
+              >
+            </div>
+            <div class="flex items-center mb-2">
+              <input
+                id="cardiac-arrest"
+                class="mr-2"
+                type="checkbox"
+                name="diseases"
+                value="Cardiac Arrest"
+                aria-label="Cardiac Arrest"
+              />
+              <label for="cardiac-arrest" class="text-gray-700"
+                >Cardiac Arrest</label
+              >
+            </div>
+          </fieldset>
+          <button
+            class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
